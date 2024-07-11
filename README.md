@@ -37,5 +37,5 @@ Vaš ključ upišite u index.js, linija 28
 
 ## Izgled stranice
 
-![screenshot](screenshot.png) 
+![screenshot]([screenshot.png](https://github.com/emanuelkufrin/filmska-noc/blob/253c2df5030029ede74786c9b61f0f8c6ba7459b/screenshot.png)) 
 
