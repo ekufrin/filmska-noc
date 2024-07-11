@@ -1,6 +1,10 @@
+
 # Filmska noć
 
 Nemate inspiraciju koji film pogledati? Isprobajte film generator koji pomoću IMDB API-a dohvaća trenutno popularne filmove.
+
+
+
 
 ## API ključ
 
@@ -9,10 +13,10 @@ Da bi koristili ovaj projekt, generirajte Vaš API ključ ovdje:
 `https://rapidapi.com/DataCrawler/api/imdb188`
 
 Vaš ključ upišite u index.js, linija 28
-
 ```bash
 "x-rapidapi-key": "UPISITE VLASTITI API KLJUC",
 ```
+
 
 ## Instalacija i pokretanje
 
@@ -22,3 +26,16 @@ Vaš ključ upišite u index.js, linija 28
   npm i -y
   nodemon index.js
 ```
+    
+## Features
+
+- Minimalno korištenje API-a (1 request dnevno)
+- Klikom na naziv filma vodi na IMDB stranicu filma
+- Prikaz IMDB ocjene
+- Responzivnost (PC i mobile)
+
+
+## Izgled stranice
+
+![App Screenshot](https://i.postimg.cc/T3TkBkx6/Snimka-zaslona-2024-07-11-173345.png)
+
