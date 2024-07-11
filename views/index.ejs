@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Filmska noć</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <% if (locals.film) { %>
+            <div class="movie-card">
+                <script> document.body.style.backgroundImage = "url(<%= film.title.primaryImage.imageUrl %>)";</script>
+                <img src="<%= film.title.primaryImage.imageUrl %>" alt="<%= film.Title %> poster" class="movie-poster">
+
+                <a href="https://www.imdb.com/title/<%= film.title.id %>" target="_blank">
+                    <h1 class="movie-title">
+                        <%= film.title.titleText.text %>
+                    </h1>
+                </a>
+                <h2 class="movie-year">
+                    <%= film.title.releaseYear.year %>
+                </h2>
+
+                <div class="movie-rating">
+                    <i class="fa-solid fa-star">
+
+                    </i>
+                    <p>
+                        <%= film.title.ratingsSummary.aggregateRating %>
+                    </p>
+
+                </div>
+                <button type="submit" class="random-button" onclick="window.location.href='/'">Pronađi novi
+                    film</button>
+            </div>
+            <% } else { %>
+                <p class="no-movie">API greška: Pokušajte ponovo.</p>
+                <% } %>
+    </div>
+</body>
+
+</html>
