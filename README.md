@@ -37,5 +37,5 @@ Vaš ključ upišite u index.js, linija 28
 
 ## Izgled stranice
 
-![App Screenshot](https://i.postimg.cc/T3TkBkx6/Snimka-zaslona-2024-07-11-173345.png)
+![screenshot](screenshot.png)
 
