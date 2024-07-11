@@ -25,7 +25,7 @@ app.get("/", async (req, res) => {
         method: "POST",
         url: "https://imdb188.p.rapidapi.com/api/v1/getPopularMovies",
         headers: {
-          "x-rapidapi-key": "UPISITE VLASTITI API KLJUC", //<-- API KLJUC
+          "x-rapidapi-key": "add58a2617msh920e043e5d2a273p1cdc2cjsn7d2b047948fa", //<-- API KLJUC
           "x-rapidapi-host": "imdb188.p.rapidapi.com",
           "Content-Type": "application/json",
         },
