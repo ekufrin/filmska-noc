@@ -37,5 +37,5 @@ Vaš ključ upišite u index.js, linija 28
 
 ## Izgled stranice
 
-![screenshot](screenshot.png)
+![screenshot](screenshot.png) 
 
