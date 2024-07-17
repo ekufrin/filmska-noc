@@ -47,3 +47,5 @@ DB_NAME = NAZIV BAZE
 ![Landing page](https://raw.githubusercontent.com/emanuelkufrin/filmska-noc/37635a0f95f91aa6a467a2d6ff73c648ef2be005/screenshot_1.png)
 ![Top 5](https://raw.githubusercontent.com/emanuelkufrin/filmska-noc/37635a0f95f91aa6a467a2d6ff73c648ef2be005/screenshot_2.png)
 
+## Video
+![Gif](https://raw.githubusercontent.com/emanuelkufrin/filmska-noc/main/showcase.gif)
