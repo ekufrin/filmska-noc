@@ -12,9 +12,9 @@ Da bi koristili ovaj projekt, generirajte Vaš API ključ ovdje:
 
 `https://rapidapi.com/DataCrawler/api/imdb188`
 
-Vaš ključ upišite u index.js, linija 28
+Vaš ključ upišite u .env datoteku:
 ```bash
-"x-rapidapi-key": "UPISITE VLASTITI API KLJUC",
+API_KEY : UPISITE VLASTITI API KLJUC
 ```
 
 
@@ -32,6 +32,8 @@ Vaš ključ upišite u index.js, linija 28
 - Minimalno korištenje API-a (1 request dnevno)
 - Klikom na naziv filma vodi na IMDB stranicu filma
 - Prikaz IMDB ocjene
+- Mogućnost lajkanja/dislajkanja filmova
+- Top 5 filmova mjeseca po odabiru korisnika na temelju lajkova
 - Responzivnost (PC i mobile)
 
 
