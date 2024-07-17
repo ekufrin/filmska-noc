@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmska Noć</title>
+    <style>
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu-icon {
+            display: none;
+        }
+
+        .menu {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu li {
+            margin: 0 1rem;
+        }
+
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="project-title">Filmska Noć</div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <ul class="menu">
+            <li><a href="/top10">Top 10</a></li>
+        </ul>
+    </header>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.menu').classList.toggle('active');
+            document.querySelector('.menu-icon').classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>

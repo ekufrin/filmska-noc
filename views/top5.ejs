@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 5 Filmova mjeseca</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .movie-list {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .movie-item {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .movie-title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .movie-year {
+            color: #666;
+        }
+
+        .movie-likes {
+            color: #4CAF50;
+        }
+
+        .error-message {
+            color: #f00;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="movie-list">
+        <h1>Top 5 Filmova mjeseca po ocjenama korisnika</h1>
+        <% if(locals.top5Filma.length> 0){ %>
+            <% top5Filma.forEach(film=> { %>
+                <div class="movie-item">
+                    <div class="movie-title">
+                        <%= film.naziv_filma %>
+                    </div>
+                    <div class="movie-year">Godina: <%= film.godina_filma %>
+                    </div>
+                    <div class="movie-likes">Lajkovi: <%= film.likes %>
+                    </div>
+                </div>
+                <% }); %>
+                    <% } else { %>
+                        <p class="error-message">Nema dostupnih filmova za prikaz.</p>
+                        <% } %>
+    </div>
+</body>
+
+</html>

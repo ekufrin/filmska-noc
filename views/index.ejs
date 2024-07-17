@@ -8,8 +8,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Filmska noć</title>
 
+
+    <script>
+        function vote(imeFilma, godina, vrsta) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("POST", "/vote");
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState === 4 && xhttp.status === 200) {
+                    // Osvježi stranicu nakon što server odgovori
+                    location.reload();
+                }
+            };
+            xhttp.send(`imeFilma=${imeFilma}&godina=${godina}&vrsta=${vrsta}`);
+
+
+        }
+    </script>
 </head>
 
 <body>
@@ -37,13 +53,33 @@
                     </p>
 
                 </div>
-                <button type="submit" class="random-button" onclick="window.location.href='/'">Pronađi novi
+
+                <div class="movie-like">
+                    <span class="fa-stack fa-2x"
+                        onclick='vote("<%=film.title.titleText.text%>", "<%=film.title.releaseYear.year%>", "like")'>
+                        <i class="fa-solid fa-thumbs-up fa-inverse" style="color: green;"></i>
+                        <i class="fa-regular fa-circle fa-stack-2x"></i>
+
+                    </span>
+
+
+                    <span class="fa-stack fa-2x"
+                        onclick='vote("<%=film.title.titleText.text%>", "<%=film.title.releaseYear.year%>", "dislike")'>
+                        <i class="fa-regular fa-circle fa-stack-2x"></i>
+                        <i class="fa-solid fa-thumbs-down fa-inverse" style="color: red;"></i>
+                    </span>
+
+
+                </div> <button type="submit" class="random-button" onclick="window.location.href='/'">
+                    Pronađi
+                    novi
                     film</button>
             </div>
             <% } else { %>
                 <p class="no-movie">API greška: Pokušajte ponovo.</p>
                 <% } %>
     </div>
+
 </body>
 
 </html>
