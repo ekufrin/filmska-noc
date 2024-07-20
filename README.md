@@ -5,7 +5,7 @@ Nemate inspiraciju koji film pogledati? Isprobajte film generator koji pomoću I
 
 
 ## LIVE DEMO
-http://filmska-noc.ekufrin.xyz/
+https://filmska-noc.ekufrin.xyz/
 
 
 
