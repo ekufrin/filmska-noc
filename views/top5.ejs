@@ -49,24 +49,25 @@
 </head>
 
 <body>
-    <div class="movie-list">
-        <h1>Top 5 Filmova mjeseca po ocjenama korisnika</h1>
-        <% if(locals.top5Filma.length> 0){ %>
-            <% top5Filma.forEach(film=> { %>
-                <div class="movie-item">
-                    <div class="movie-title">
-                        <%= film.naziv_filma %>
+    <%- include('header.ejs') %>
+        <div class="movie-list">
+            <h1>Top 5 Filmova mjeseca po ocjenama korisnika</h1>
+            <% if(locals.top5Filma.length> 0){ %>
+                <% top5Filma.forEach(film=> { %>
+                    <div class="movie-item">
+                        <div class="movie-title">
+                            <%= film.naziv_filma %>
+                        </div>
+                        <div class="movie-year">Godina: <%= film.godina_filma %>
+                        </div>
+                        <div class="movie-likes">Lajkovi: <%= film.likes %>
+                        </div>
                     </div>
-                    <div class="movie-year">Godina: <%= film.godina_filma %>
-                    </div>
-                    <div class="movie-likes">Lajkovi: <%= film.likes %>
-                    </div>
-                </div>
-                <% }); %>
-                    <% } else { %>
-                        <p class="error-message">Nema dostupnih filmova za prikaz.</p>
-                        <% } %>
-    </div>
+                    <% }); %>
+                        <% } else { %>
+                            <p class="error-message">Nema dostupnih filmova za prikaz.</p>
+                            <% } %>
+        </div>
 </body>
 
 </html>

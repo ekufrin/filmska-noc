@@ -58,7 +58,7 @@ body {
   justify-items: stretch;
   align-items: center;
   font-size: 16px;
-  margin: 5px 0;
+  margin-left: -15px;
   color: #e0e0e0;
 }
 
@@ -101,4 +101,20 @@ body {
 .no-movie {
   font-size: 20px;
   color: #611d1d;
+}
+
+@media only screen and (max-width: 600px) {
+  .movie-poster {
+    width: 200px;
+  }
+  .movie-title {
+    font-size: 20px;
+  }
+  .movie-year {
+    font-size: 16px;
+  }
+  .movie-like {
+    font-size: 13px;
+    margin-top: 1vh;
+  }
 }

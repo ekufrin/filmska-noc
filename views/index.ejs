@@ -26,60 +26,66 @@
 
         }
     </script>
+
 </head>
 
 <body>
+
     <div class="container">
-        <% if (locals.film) { %>
-            <div class="movie-card">
-                <script> document.body.style.backgroundImage = "url(<%= film.title.primaryImage.imageUrl %>)";</script>
-                <img src="<%= film.title.primaryImage.imageUrl %>" alt="<%= film.Title %> poster" class="movie-poster">
+        <%- include('header.ejs') %>
+            <% if (locals.film) { %>
+                <div class="movie-card">
+                    <script> document.body.style.backgroundImage = "url(<%= film.title.primaryImage.imageUrl %>)";</script>
+                    <img src="<%= film.title.primaryImage.imageUrl %>" alt="<%= film.Title %> poster"
+                        class="movie-poster">
 
-                <a href="https://www.imdb.com/title/<%= film.title.id %>" target="_blank">
-                    <h1 class="movie-title">
-                        <%= film.title.titleText.text %>
-                    </h1>
-                </a>
-                <h2 class="movie-year">
-                    <%= film.title.releaseYear.year %>
-                </h2>
+                    <a href="https://www.imdb.com/title/<%= film.title.id %>" target="_blank">
+                        <h1 class="movie-title">
+                            <%= film.title.titleText.text %>
+                        </h1>
+                    </a>
+                    <h2 class="movie-year">
+                        <%= film.title.releaseYear.year %>
+                    </h2>
 
-                <div class="movie-rating">
-                    <i class="fa-solid fa-star">
+                    <div class="movie-rating">
+                        <i class="fa-solid fa-star">
 
-                    </i>
-                    <p>
-                        <%= film.title.ratingsSummary.aggregateRating %> / 10
-                    </p>
+                        </i>
+                        <p>
+                            <%= film.title.ratingsSummary.aggregateRating %> / 10
+                        </p>
 
+                    </div>
+
+                    <div class="movie-like">
+                        <span class="fa-stack fa-2x"
+                            onclick='vote("<%=film.title.titleText.text%>", "<%=film.title.releaseYear.year%>", "like")'>
+                            <i class="fa-solid fa-thumbs-up fa-inverse" style="color: green;"></i>
+                            <i class="fa-regular fa-circle fa-stack-2x"></i>
+
+                        </span>
+
+
+                        <span class="fa-stack fa-2x"
+                            onclick='vote("<%=film.title.titleText.text%>", "<%=film.title.releaseYear.year%>", "dislike")'>
+                            <i class="fa-regular fa-circle fa-stack-2x"></i>
+                            <i class="fa-solid fa-thumbs-down fa-inverse" style="color: red;"></i>
+                        </span>
+
+
+                    </div> <button type="submit" class="random-button" onclick="window.location.href='/'">
+                        Pronađi
+                        novi
+                        film</button>
                 </div>
-
-                <div class="movie-like">
-                    <span class="fa-stack fa-2x"
-                        onclick='vote("<%=film.title.titleText.text%>", "<%=film.title.releaseYear.year%>", "like")'>
-                        <i class="fa-solid fa-thumbs-up fa-inverse" style="color: green;"></i>
-                        <i class="fa-regular fa-circle fa-stack-2x"></i>
-
-                    </span>
-
-
-                    <span class="fa-stack fa-2x"
-                        onclick='vote("<%=film.title.titleText.text%>", "<%=film.title.releaseYear.year%>", "dislike")'>
-                        <i class="fa-regular fa-circle fa-stack-2x"></i>
-                        <i class="fa-solid fa-thumbs-down fa-inverse" style="color: red;"></i>
-                    </span>
-
-
-                </div> <button type="submit" class="random-button" onclick="window.location.href='/'">
-                    Pronađi
-                    novi
-                    film</button>
-            </div>
-            <% } else { %>
-                <p class="no-movie">API greška: Pokušajte ponovo.</p>
-                <% } %>
+                <% } else { %>
+                    <p class="no-movie">API greška: Pokušajte ponovo.</p>
+                    <% } %>
+                        <%- include('footer.ejs') %>
     </div>
 
 </body>
+
 
 </html>
