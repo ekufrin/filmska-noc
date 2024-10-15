@@ -35,17 +35,16 @@
         <%- include('header.ejs') %>
             <% if (locals.film) { %>
                 <div class="movie-card">
-                    <script> document.body.style.backgroundImage = "url(<%= film.title.primaryImage.imageUrl %>)";</script>
-                    <img src="<%= film.title.primaryImage.imageUrl %>" alt="<%= film.Title %> poster"
-                        class="movie-poster">
+                    <script> document.body.style.backgroundImage = "url(<%= film.primaryImage.imageUrl %>)";</script>
+                    <img src="<%= film.primaryImage.imageUrl %>" alt="<%= film.Title %> poster" class="movie-poster">
 
-                    <a href="https://www.imdb.com/title/<%= film.title.id %>" target="_blank">
+                    <a href="https://www.imdb.com/title/<%= film.id %>" target="_blank">
                         <h1 class="movie-title">
-                            <%= film.title.titleText.text %>
+                            <%= film.titleText.text %>
                         </h1>
                     </a>
                     <h2 class="movie-year">
-                        <%= film.title.releaseYear.year %>
+                        <%= film.releaseYear.year %>
                     </h2>
 
                     <div class="movie-rating">
@@ -53,14 +52,19 @@
 
                         </i>
                         <p>
-                            <%= film.title.ratingsSummary.aggregateRating %> / 10
+                            <%= film.ratingsSummary.aggregateRating %> / 10
                         </p>
 
                     </div>
 
+                    <div>
+                        <p class="movie-description">
+                            <%= film.plot.plotText.plainText %>
+                        </p>
+                    </div>
                     <div class="movie-like">
                         <span class="fa-stack fa-2x"
-                            onclick='vote("<%=film.title.titleText.text%>", "<%=film.title.releaseYear.year%>", "like")'>
+                            onclick='vote("<%=film.titleText.text%>", "<%=film.releaseYear.year%>", "like")'>
                             <i class="fa-solid fa-thumbs-up fa-inverse" style="color: green;"></i>
                             <i class="fa-regular fa-circle fa-stack-2x"></i>
 
@@ -68,7 +72,7 @@
 
 
                         <span class="fa-stack fa-2x"
-                            onclick='vote("<%=film.title.titleText.text%>", "<%=film.title.releaseYear.year%>", "dislike")'>
+                            onclick='vote("<%=film.titleText.text%>", "<%=film.releaseYear.year%>", "dislike")'>
                             <i class="fa-regular fa-circle fa-stack-2x"></i>
                             <i class="fa-solid fa-thumbs-down fa-inverse" style="color: red;"></i>
                         </span>

@@ -30,28 +30,12 @@ app.get("/", async (req, res) => {
     } else {
       // Ako su datumi različiti, izvrši novi fetch
       const options = {
-        method: "POST",
-        url: "https://imdb188.p.rapidapi.com/api/v1/getPopularMovies",
+        method: "GET",
+        url: "https://imdb188.p.rapidapi.com/api/v1/getFanFavorites",
+        params: { country: "HR" },
         headers: {
-          "x-rapidapi-key": process.env.API_KEY, //<-- API KLJUC
+          "x-rapidapi-key": process.env.API_KEY,
           "x-rapidapi-host": "imdb188.p.rapidapi.com",
-          "Content-Type": "application/json",
-        },
-        data: {
-          limit: 200,
-          releaseDate: {
-            releaseDateRange: {
-              end: "2029-12-31",
-              start: "2020-01-01",
-            },
-          },
-          userRatings: {
-            aggregateRatingRange: { max: 10, min: 6 },
-            ratingsCountRange: { min: 1000 },
-          },
-          runtime: {
-            runtimeRangeMinutes: { max: 120, min: 0 },
-          },
         },
       };
 

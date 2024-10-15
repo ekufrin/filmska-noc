@@ -62,6 +62,10 @@ body {
   color: #e0e0e0;
 }
 
+.movie-description {
+  font-size: 16px;
+  margin: 10px 0;
+}
 .movie-rating p {
   padding-top: 5px;
   margin-left: -5px;
@@ -104,17 +108,26 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
+  .container {
+    padding: 5px;
+  }
   .movie-poster {
-    width: 200px;
+    width: 150px;
+    margin-bottom: 3vh;
   }
   .movie-title {
     font-size: 20px;
+    margin: 0;
   }
   .movie-year {
     font-size: 16px;
+    margin: 0;
   }
   .movie-like {
     font-size: 13px;
     margin-top: 1vh;
+  }
+  .movie-description {
+    font-size: 14px;
   }
 }
