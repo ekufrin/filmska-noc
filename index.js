@@ -34,13 +34,36 @@ app.get("/", async (req, res) => {
         url: "https://imdb188.p.rapidapi.com/api/v1/getFanFavorites",
         params: { country: "HR" },
         headers: {
-          "x-rapidapi-key": process.env.API_KEY,
+          "x-rapidapi-key": process.env.IMDB_API_KEY,
           "x-rapidapi-host": "imdb188.p.rapidapi.com",
         },
       };
 
       const response = await axios(options);
       rezultat = response.data.data.list; // Dohvaćam array iz API-a
+      for (let i = 0; i < rezultat.length; i++) {
+        const film = rezultat[i];
+        const options = {
+          method: "POST",
+          url: "https://deep-translate1.p.rapidapi.com/language/translate/v2",
+          headers: {
+            "x-rapidapi-key": process.env.TRANSLATE_API_KEY,
+            "x-rapidapi-host": "deep-translate1.p.rapidapi.com",
+            "Content-Type": "application/json",
+          },
+          data: {
+            q: film.plot.plotText.plainText,
+            source: "en",
+            target: "hr",
+          },
+        };
+        try {
+          const response = await axios.request(options);
+          rezultat[i].plot.plotText.plainText = response.data.data.translations.translatedText;
+        } catch (error) {
+          console.error(error);
+        }
+      }
 
       zadnjiFetch = today; // Ažuriraj zadnjiFetch datum
       console.log("Dohvacam podatke za današnji datum");
@@ -59,6 +82,7 @@ app.get("/top", async (req, res) => {
     const filmovi = await db.any(`
       SELECT naziv_filma, godina_filma, likes
       FROM filmovi
+      WHERE likes > 0
       ORDER BY likes DESC
       LIMIT 5
     `);

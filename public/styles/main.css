@@ -108,23 +108,33 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
-  .container {
-    padding: 5px;
+  body {
+    all: unset;
+    color: white;
   }
+  .container {
+    padding: 10px;
+    height: 100%;
+  }
+
   .movie-poster {
-    width: 150px;
-    margin-bottom: 3vh;
+    max-width: 40%;
+    margin-bottom: 1vh;
   }
   .movie-title {
-    font-size: 20px;
-    margin: 0;
+    font-size: 18px;
+    margin-bottom: 1vh;
   }
   .movie-year {
     font-size: 16px;
-    margin: 0;
+    margin-bottom: 0;
+  }
+  .movie-rating {
+    font-size: 12px;
+    margin-top: 1vh;
   }
   .movie-like {
-    font-size: 13px;
+    font-size: 10px;
     margin-top: 1vh;
   }
   .movie-description {
