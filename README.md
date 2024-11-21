@@ -14,10 +14,12 @@ https://filmska-noc.ekufrin.xyz/
 Da bi koristili ovaj projekt, generirajte Vaš API ključ ovdje:
 
 `https://rapidapi.com/DataCrawler/api/imdb188`
+`https://rapidapi.com/gatzuma/api/deep-translate1`
 
 Kreirajte .env datoteku i ispunite vlastite podatke:
 ```bash
-API_KEY = VAS RAPIDAPI KLJUC
+IMDB_API_KEY = VAS RAPIDAPI IMDB KLJUC
+TRANSLATE_API_KEY = VAS RAPIDAPI DEEPTRANSLATE KLJUC
 DB_USER = USERNAME BAZE
 DB_PASS = PASSWORD BAZE
 DB_HOST = HOST BAZE
@@ -40,6 +42,7 @@ DB_NAME = NAZIV BAZE
 - Minimalno korištenje API-a (1 request dnevno)
 - Klikom na naziv filma vodi na IMDB stranicu filma
 - Prikaz IMDB ocjene
+- Prijevod opisa filma na hrvatski jezik
 - Mogućnost lajkanja/dislajkanja filmova
 - Top 5 filmova mjeseca po odabiru korisnika na temelju lajkova (/top)
 - Responzivnost (PC i mobile)
